@@ -1,0 +1,244 @@
+<svg width="100%" viewBox="0 0 820 1280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- ─────────────────────────────────────────
+     LAYOUT CONSTANTS (comment only)
+     Canvas: 820 wide
+     Left col:  x=30,  w=175  cx=117
+     Centre:    x=322, w=176  cx=410
+     Right col: x=615, w=175  cx=702
+
+     Row y-tops:
+       Title:      30
+       Login:     130
+       Auth:      240
+       Diamond:   340   (diamond apex→base: 340–400, mid=370)
+       Row A:     460   (Android / Web dash)
+       Row B:     550   (Learning / Patient)
+       Row C:     640   (Prereq / Firestore / Quiz review)
+       Row D:     730   (Post-quiz / CAP SIR)
+       Row E:     820   (Parent dash / Progress)
+       Outcome:  1000
+     All boxes h=70, gap=20
+───────────────────────────────────────── -->
+
+<!-- ══ 1. TITLE ══ -->
+<rect x="285" y="30" width="250" height="66" rx="10" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="16" font-weight="700" fill="#444441" x="410" y="56" text-anchor="middle" dominant-baseline="central">Sound for Silence</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="12" fill="#888780" x="410" y="78" text-anchor="middle" dominant-baseline="central">System architecture flow</text>
+
+<!-- Title → Login -->
+<line x1="410" y1="96" x2="410" y2="126" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ══ 2. USER LOGIN (pentagon) ══ -->
+<polygon points="285,170 410,126 535,170 535,214 285,214" fill="#F5C4B3" stroke="#D85A30" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="600" fill="#712B13" x="410" y="183" text-anchor="middle" dominant-baseline="central">User login</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="12" fill="#993C1D" x="410" y="200" text-anchor="middle" dominant-baseline="central">Parent / Therapist</text>
+
+<!-- Login → Auth -->
+<line x1="410" y1="214" x2="410" y2="240" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ══ 3. FIREBASE AUTH ══ -->
+<rect x="265" y="240" width="290" height="66" rx="10" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="600" fill="#3C3489" x="410" y="264" text-anchor="middle" dominant-baseline="central">Firebase Auth</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="12" fill="#534AB7" x="410" y="284" text-anchor="middle" dominant-baseline="central">Role-based login</text>
+
+<!-- Auth → Diamond -->
+<line x1="410" y1="306" x2="410" y2="336" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- ══ 4. ROLE? DIAMOND ══ -->
+<!-- diamond: top=336, mid=376, bottom=416, left=300, right=520 -->
+<polygon points="410,336 520,376 410,416 300,376" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="600" fill="#085041" x="410" y="379" text-anchor="middle" dominant-baseline="central">Role?</text>
+
+<!-- Diamond → Left column: go left along y=376 to x=117, then down to row A y=460 -->
+<path d="M300,376 L117,376 L117,460" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="200" y="368" text-anchor="middle">Parent / Child</text>
+
+<!-- Diamond → Right column: go right along y=376 to x=702, then down to row A y=460 -->
+<path d="M520,376 L702,376 L702,460" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arr)"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="618" y="368" text-anchor="middle">Therapist</text>
+
+<!-- ══════════════════════════════════════════
+     LEFT COLUMN  cx=117  x=30  w=175
+══════════════════════════════════════════ -->
+
+<!-- L-A: Android app  y=460 -->
+<rect x="30" y="460" width="175" height="66" rx="8" fill="#FAC775" stroke="#BA7517" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#412402" x="117" y="483" text-anchor="middle" dominant-baseline="central">Android app</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#633806" x="117" y="501" text-anchor="middle" dominant-baseline="central">Kotlin + Jetpack Compose</text>
+
+<line x1="117" y1="526" x2="117" y2="548" stroke="#BA7517" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- L-B: Learning stages  y=548 -->
+<rect x="30" y="548" width="175" height="66" rx="8" fill="#FAC775" stroke="#BA7517" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#412402" x="117" y="571" text-anchor="middle" dominant-baseline="central">Learning stages</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#633806" x="117" y="589" text-anchor="middle" dominant-baseline="central">Sequential videos</text>
+
+<line x1="117" y1="614" x2="117" y2="636" stroke="#BA7517" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- L-C: Prereq. lock  y=636 -->
+<rect x="30" y="636" width="175" height="66" rx="8" fill="#FAC775" stroke="#BA7517" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#412402" x="117" y="659" text-anchor="middle" dominant-baseline="central">Prereq. lock</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#633806" x="117" y="677" text-anchor="middle" dominant-baseline="central">Complete to unlock next</text>
+
+<line x1="117" y1="702" x2="117" y2="724" stroke="#BA7517" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- L-D: Post-video quiz  y=724 -->
+<rect x="30" y="724" width="175" height="66" rx="8" fill="#FAC775" stroke="#BA7517" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#412402" x="117" y="747" text-anchor="middle" dominant-baseline="central">Post-video quiz</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#633806" x="117" y="765" text-anchor="middle" dominant-baseline="central">Interactive Q&amp;A</text>
+
+<line x1="117" y1="790" x2="117" y2="812" stroke="#BA7517" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- L-E: Parent dashboard (green)  y=812 -->
+<rect x="30" y="812" width="175" height="66" rx="8" fill="#C0DD97" stroke="#3B6D11" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#173404" x="117" y="835" text-anchor="middle" dominant-baseline="central">Parent dashboard</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#27500A" x="117" y="853" text-anchor="middle" dominant-baseline="central">Streaks · Progress · %</text>
+
+<!-- ══════════════════════════════════════════
+     RIGHT COLUMN  cx=702  x=615  w=175
+══════════════════════════════════════════ -->
+
+<!-- R-A: Web dashboard  y=460 -->
+<rect x="615" y="460" width="175" height="66" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#042C53" x="702" y="483" text-anchor="middle" dominant-baseline="central">Web dashboard</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#0C447C" x="702" y="501" text-anchor="middle" dominant-baseline="central">HTML + CSS + JS</text>
+
+<line x1="702" y1="526" x2="702" y2="548" stroke="#185FA5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- R-B: Patient list  y=548 -->
+<rect x="615" y="548" width="175" height="66" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#042C53" x="702" y="571" text-anchor="middle" dominant-baseline="central">Patient list</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#0C447C" x="702" y="589" text-anchor="middle" dominant-baseline="central">Implant &amp; due dates</text>
+
+<line x1="702" y1="614" x2="702" y2="636" stroke="#185FA5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- R-C: Quiz score review  y=636 -->
+<rect x="615" y="636" width="175" height="66" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#042C53" x="702" y="659" text-anchor="middle" dominant-baseline="central">Quiz score review</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#0C447C" x="702" y="677" text-anchor="middle" dominant-baseline="central">Pass / Fail · %</text>
+
+<line x1="702" y1="702" x2="702" y2="724" stroke="#185FA5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- R-D: CAP & SIR (amber)  y=724 -->
+<rect x="615" y="724" width="175" height="66" rx="8" fill="#FAC775" stroke="#BA7517" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#412402" x="702" y="747" text-anchor="middle" dominant-baseline="central">CAP (0–7) &amp; SIR (0–5)</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#633806" x="702" y="765" text-anchor="middle" dominant-baseline="central">Clinical score entry</text>
+
+<line x1="702" y1="790" x2="702" y2="812" stroke="#185FA5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- R-E: Progress charts (green)  y=812 -->
+<rect x="615" y="812" width="175" height="66" rx="8" fill="#C0DD97" stroke="#3B6D11" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="13" font-weight="600" fill="#173404" x="702" y="835" text-anchor="middle" dominant-baseline="central">Progress charts</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#27500A" x="702" y="853" text-anchor="middle" dominant-baseline="central">3 / 6 / 12 mo · Chart.js</text>
+
+<!-- ══════════════════════════════════════════
+     CENTRE: Firebase Firestore  y=636  cx=410
+     x=322 w=176
+══════════════════════════════════════════ -->
+<rect x="322" y="636" width="176" height="66" rx="10" fill="#FAC775" stroke="#BA7517" stroke-width="1.5"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="700" fill="#412402" x="410" y="659" text-anchor="middle" dominant-baseline="central">Firebase Firestore</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="12" fill="#633806" x="410" y="679" text-anchor="middle" dominant-baseline="central">Real-time DB</text>
+
+<!-- ══════════════════════════════════════════
+     DASHED CONNECTORS
+     Strategy: route every dashed line through
+     the OUTER margins (x≤10 or x≥810) so they
+     never pass through any box.
+
+     Firestore entry point: bottom centre (410, 702)
+     We funnel all 4 lines into a single entry
+     via a horizontal bus at y=930 — fully below
+     all boxes (bottom of row-E = 878).
+
+     Left-side lines exit boxes on the LEFT edge,
+     travel left to x=10, go down, then right to
+     the bus.
+     Right-side lines exit boxes on the RIGHT edge,
+     travel right to x=810, go down, then left.
+     Both sides meet the bus at y=930 and converge
+     to x=410, then up to Firestore bottom (702).
+══════════════════════════════════════════ -->
+
+<!-- Post-video quiz (L-D) → Firestore  amber dashed
+     Exit: left edge of L-D box = x=30, mid y=757
+     → x=10, down to y=930, right to x=410, up to y=702 -->
+<path d="M30,757 L10,757 L10,930 L410,930 L410,702"
+  fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+<!-- Parent dashboard (L-E) → Firestore  green dashed
+     Exit: left edge x=30, mid y=845
+     → x=10 (slightly inside the amber line), but same x=10
+     We offset to x=16 to keep them visually distinct -->
+<path d="M30,845 L16,845 L16,938 L410,938 L410,702"
+  fill="none" stroke="#3B6D11" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+<!-- Quiz score review (R-C) → Firestore  blue dashed
+     Exit: right edge x=790, mid y=669
+     → x=810, down to y=922, left to x=410, up to y=702 -->
+<path d="M790,669 L810,669 L810,922 L410,922 L410,702"
+  fill="none" stroke="#185FA5" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+<!-- CAP/SIR (R-D) → Firestore  amber dashed
+     Exit: right edge x=790, mid y=757
+     → x=802 (offset from blue), down to y=914, left to x=410 -->
+<path d="M790,757 L802,757 L802,914 L411,914 L411,702"
+  fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+
+<!-- ══════════════════════════════════════════
+     BOTTOM CONVERGENCE
+     Solid arrows from L-E and R-E → outcome box
+     Outcome box: y=1000, x=235, w=350, cx=410
+     Route: go below row-E (bottom=878), 
+     meet at y=985 then in to box top
+══════════════════════════════════════════ -->
+
+<!-- L-E bottom → down to y=985 → right to cx=410 → down into box -->
+<path d="M117,878 L117,985 L410,985 L410,1000"
+  fill="none" stroke="#3B6D11" stroke-width="1.5" marker-end="url(#arr)"/>
+
+<!-- R-E bottom → down to y=985 → left to cx=410 (meets same point) -->
+<path d="M702,878 L702,985 L411,985"
+  fill="none" stroke="#3B6D11" stroke-width="1.5"/>
+
+<!-- Outcome box -->
+<rect x="235" y="1000" width="350" height="70" rx="10" fill="#C0DD97" stroke="#3B6D11" stroke-width="1.5"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="14" font-weight="700" fill="#173404" x="410" y="1025" text-anchor="middle" dominant-baseline="central">Better developmental outcomes</text>
+<text font-family="Inter,Roboto,sans-serif" font-size="12" fill="#27500A" x="410" y="1049" text-anchor="middle" dominant-baseline="central">Data-driven therapy adjustments</text>
+
+<!-- ══════════════════════════════════════════
+     LEGEND
+══════════════════════════════════════════ -->
+<rect x="30" y="1102" width="760" height="96" rx="8" fill="#F1EFE8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" font-weight="600" fill="#5F5E5A" x="46" y="1121" dominant-baseline="central">Legend</text>
+
+<rect x="46" y="1136" width="16" height="13" rx="3" fill="#FAC775" stroke="#BA7517" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="68" y="1143" dominant-baseline="central">Android / app</text>
+
+<rect x="185" y="1136" width="16" height="13" rx="3" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="207" y="1143" dominant-baseline="central">Web / therapist</text>
+
+<rect x="335" y="1136" width="16" height="13" rx="3" fill="#C0DD97" stroke="#3B6D11" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="357" y="1143" dominant-baseline="central">Outcomes</text>
+
+<rect x="460" y="1136" width="16" height="13" rx="3" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="482" y="1143" dominant-baseline="central">Auth</text>
+
+<rect x="560" y="1136" width="16" height="13" rx="3" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="582" y="1143" dominant-baseline="central">Decision</text>
+
+<line x1="46" y1="1174" x2="70" y2="1174" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="76" y="1174" dominant-baseline="central">Dashed amber = app → Firestore sync</text>
+
+<line x1="335" y1="1174" x2="359" y2="1174" stroke="#3B6D11" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="365" y="1174" dominant-baseline="central">Dashed green = dashboard → Firestore</text>
+
+<line x1="570" y1="1174" x2="594" y2="1174" stroke="#185FA5" stroke-width="1.5" stroke-dasharray="5,3"/>
+<text font-family="Inter,Roboto,sans-serif" font-size="11" fill="#5F5E5A" x="600" y="1174" dominant-baseline="central">Dashed blue = therapist → Firestore</text>
+
+</svg>

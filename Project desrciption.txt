@@ -1,0 +1,44 @@
+Project Title: Sound for Silence
+Subtitle: A Comprehensive Digital Ecosystem for Cognitive Development and Therapeutic Monitoring
+
+1. Project Overview
+Sound for Silence is a multi-platform healthcare solution designed to support children undergoing cognitive development therapy (such as speech, auditory, or behavioral therapy). The project addresses the need for structured, "anytime-anywhere" learning by providing a curated educational environment for children while giving therapists a powerful web-based dashboard to monitor progress, analyze quiz data, and record clinical assessments.
+
+2. System Architecture
+The system is divided into two primary interfaces:
+
+The Mobile Application (Patient/Parent Portal): A gamified learning environment where children consume therapeutic content and take quizzes to reinforce learning.
+
+The Web Dashboard (Therapist Portal): A centralized management system for therapists to track patient lists, review objective quiz performance, and input subjective clinical scores.
+
+3. Key Features
+A. Gamified Learning & Progression (Mobile App)
+Structured Learning Stages: Content is organized into "Learning Stages" to ensure a logical developmental path.
+
+Sequential Video Access: To ensure mastery, the system enforces a "Prerequisite Logic"—a child must complete the current video before the next one in the stage is unlocked.
+
+Interactive Quizzes: Each video is followed by a quiz to measure immediate retention and cognitive response.
+
+Progress Tracking: Real-time dashboards for parents to monitor day streaks, video completion percentages, and overall progress.
+
+B. Clinical Monitoring & Assessment (Web Portal)
+Assigned Patient Management: Therapists can view a list of all children under their care, including critical data like implant dates (useful for cochlear implant or medical device tracking) and "Next Due" assessment dates.
+
+Objective Data Review: Therapists can pull up "Child Quiz Scores" to see how the child performed on app-based tasks (Pass/Fail status and percentage).
+
+Subjective Clinical Scoring: Based on quiz performance and clinical observation, therapists record two primary metrics:
+
+CAP Score (Category of Auditory Perception): Ranging from 0–7.
+
+SIR Score (Speech Intelligibility Rating): Ranging from 0–5.
+
+Assessment History: A longitudinal view of the child’s scores over 3-month, 6-month, or 12-month periods to visualize growth.
+
+4. Technology Stack (Inferred)
+Andoird app: kotlin jetpack
+WebL js html css  
+firabse auth and sotorage 
+
+
+5. Clinical Impact
+By digitizing the therapy process, Sound for Silence ensures that therapy does not stop at the clinic doors. It provides therapists with data-driven insights rather than relying solely on parent anecdotes, leading to more accurate clinical adjustments and better developmental outcomes for the child.
