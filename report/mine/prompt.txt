@@ -1,0 +1,20 @@
+first read the "cse report format". 
+enusre the format is followed to the point and strictly.
+
+you have to create the invidual report for me.
+
+there are four memembers in group so suggest appropaite role for us.
+
+my role is Backend & Firebase Engineer (Auth, Firestore, Hosting, Security Rules)
+
+
+
+then after this selection create the invidual report me based on that role
+
+i have included the a project overiew file.
+
+your goal is to create the report in typst.
+
+i have included a typst_example file. use that to learn typst.
+
+

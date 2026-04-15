@@ -1,0 +1,14 @@
+i want you to edit the sanjeev file based on the "overview.pdf"
+
+write a one to one (around same pagraphs) for abhsishek but based on this new overview.pdf
+
+just change the contnent.
+
+think of it as tranlasting one report from one project to anohter.
+
+also abhsihsek focuses is kotlin and web developer of the project so base his report on that.
+
+(please keep the word count or number of lines similar to sanjeev.typ)
+
+also only inlcude 1 2 images (dont use er images) it will be dashbord images of the website and max 2.
+

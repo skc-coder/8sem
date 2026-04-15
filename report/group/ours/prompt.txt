@@ -16,3 +16,4 @@ to learn about our project you can read overview.pdf and synopsis .typ (but its 
 
 also dont use er diagrams, use dashbord schrreenshots as given
 
+also ensure that the lines in report file are 1700 +
