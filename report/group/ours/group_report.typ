@@ -19,7 +19,7 @@
 #let department = "Computer Science & Engin1eering"
 #let hod  = "Er. Pawan Sen"
 #let principal = "Dr. Himanshu Arora"
-#let project_guide = "Dr. Arvind Agarwal"
+#let project_guide = "Er. Pawan Sen"
 
 #set page(
   paper: "a4",
@@ -142,9 +142,8 @@
 #columns(2, gutter: 4pt)[
   #align(left)[
     #text(size: 12pt)[
-      *Project Guide:*\
-      #project_guide\
-      HOD, CSE
+      *Project In-charge:*\
+      
     ]
   ]
   #colbreak()

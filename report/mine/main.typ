@@ -155,8 +155,7 @@
   #align(left)[
     #text(size: 12pt)[
       *Project In-charge*\
-      #hod\
-    HOD, CSE
+  
     ]
   ]
   #colbreak()
