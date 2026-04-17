@@ -408,12 +408,12 @@ my professional development.
 #grid(
   columns: (1fr, auto),
   gutter: 4pt,
-  ..([• Certificate of Completion], align(right)[i]),
-  ..([• Declaration by the Candidate], align(right)[ii]),
-  ..([• Acknowledgement], align(right)[iii]),
-  ..([• Table of Contents], align(right)[iv]),
-  ..([• List of Figures], align(right)[vi]),
-  ..([• List of Tables], align(right)[vii]),
+  ..([• *Certificate of Completion*], align(right)[i]),
+  ..([• *Declaration by the Candidate*], align(right)[ii]),
+  ..([• *Acknowledgement*], align(right)[iii]),
+  ..([• *Table of Contents*], align(right)[iv]),
+  ..([• *List of Figures*], align(right)[vi]),
+  ..([• *List of Tables*], align(right)[vii]),
 )
 
 #v(10pt)
@@ -522,6 +522,12 @@ my professional development.
 
 
 = Introduction
+
+*Sound for Silence* is a digital healthcare platform built around a dual-interface architecture, developed to support children going through cochlear implant rehabilitation. The platform delivers its functionality through two primary interfaces — an Android mobile application serving patients and their parents, and a web-based dashboard designed for therapists and clinicians — both powered by a shared Firebase cloud backend.
+
+This report presents an individual account of the contributions made in the capacity of *Backend & Firebase Engineer*. This role centred on the end-to-end design and implementation of the project's backend infrastructure using Firebase, covering *Firebase Authentication* with role-based access control, *Cloud Firestore* data modelling and schema design, *Firebase Security Rules* for data protection, and *Firebase Hosting* for deployment of the therapist web portal. The backend serves as the authoritative data layer and synchronisation bridge connecting the Android client and the web dashboard.
+
+The platform was built collaboratively by a team of four, with each member taking ownership of a clearly defined technical domain. The team comprised a *Backend & Firebase Engineer*, an *Android Developer*, a *Frontend & Web Dashboard Developer*, and a *UI/UX & Testing Engineer*. While responsibilities were divided by specialisation, the team worked in close coordination throughout development to ensure consistent integration across all layers of the system.
 
 == Abstract of Project
 
