@@ -8,10 +8,18 @@
 
 #let college = "Arya Institute of Engineering, Technology & Management"
 
-#let name = "Shekhar Chaurasiya"
-#let hod  = "Er. NEELAM JANGID
+#let name1 = "Abhishek Verma"
+#let name2 = "Shekhar Chaurasiya"
+#let name3 = "Sakshi Puria"
+#let name4 = "Abhishek Rathore"
+
+#let roll1 = "22EAOCS005"
+#let roll2 = "22EAOCS047"
+#let roll3 = "22EAOCS042"
+#let roll4 = "22EAOCS004"
+#let hod  = "Er. Neelam Jangir
 AP in CSE Deptt"
-#let hema = "Er. Hemlata Garg"
+#let inch = "Er. Pawan Sen"
 #let roll = "22EAOCS047"
 #let project = "Sound for Silence"
 
@@ -32,28 +40,60 @@ AP in CSE Deptt"
 )
 
 // ── Heading styles ───────────────────────────────────────────────
-#set heading(numbering: none)
+// 
+// #set heading(numbering: (..nums) => {
+//   if nums.pos().len() <= 2 {
+//     numbering("1.1.", ..nums)
+//   }
+//   if nums.pos().len() <= 3{
+//     numbering("1.1.1", ..nums)
+//   }
+// })
 
+#set heading(numbering: "1.")
 #show heading.where(level: 1): it => {
-  pagebreak(weak: false)
-  v(6pt)
-  align(center)[
-    #text(size: 16pt, weight: "bold")[#it.body]
-  ]
-  v(8pt)
+  pagebreak()
+  it
+}   // Set spacing for all heading levels
+#show heading.where(level: 1): it => {
+  set text(size: 16pt, weight: "bold")
+  set block(below: 25pt)
+  it
 }
-
 #show heading.where(level: 2): it => {
-  v(6pt)
-  text(size: 14pt, weight: "bold")[#it.body]
-  v(4pt)
+  set text(size: 14pt)
+  set block(below: 15pt)
+  it
 }
-
 #show heading.where(level: 3): it => {
-  v(4pt)
-  text(size: 12pt, weight: "bold")[#it.body]
-  v(2pt)
-}
+  set text(size: 12pt)
+  set block(below: 10pt)
+  it
+}   
+#let indent-3 = 1em
+
+
+// #show heading.where(level: 3): set text(size: 12pt) + set block(below: 10pt)   
+// #show heading.where(level: 1): it => {
+//   pagebreak(weak: false)
+//   v(6pt)
+//   align(center)[
+//     #text(size: 16pt, weight: "bold")[#it.body]
+//   ]
+//   v(8pt)
+// }
+
+// #show heading.where(level: 2): it => {
+//   v(6pt)
+//   text(size: 14pt, weight: "bold")[#it.body]
+//   v(4pt)
+// }
+
+// #show heading.where(level: 3): it => {
+//   v(4pt)
+//   text(size: 12pt, weight: "bold")[#it.body]
+//   v(2pt)
+// }
 
 
 // ════════════════════════════════════════════════════════════════
@@ -95,9 +135,9 @@ AP in CSE Deptt"
   // Replace logo.png with actual college logo
   #image("logo.png", width: 1.5in, height: 1.5in)
 
-  #v(0.35in)
+  #v(0.05in)
 
-  #columns(2, gutter: 4pt)[
+  #columns(2, gutter: 66pt)[
     #align(left)[
       #text(size: 12pt)[
         *Under the Supervision of:*\
@@ -106,11 +146,13 @@ AP in CSE Deptt"
     ]
 
     #colbreak()
-    #align(right)[
+    #align(left)[
       #text(size: 12pt)[
         *Submitted by:*\
-        #name \
-        RTU Roll No: #roll
+         #name1 (#roll1)\
+    #name2 (#roll2)\
+    #name3 (#roll3)\
+    #name4 (#roll4)\
       ]
     ]
   ]
@@ -140,31 +182,40 @@ AP in CSE Deptt"
   #text(size: 14pt, weight: "bold")[DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING]
   #v(0.3in)
   #text(size: 16pt, weight: "bold")[Certificate of Completion]
-]
+  
+  ]
+
+// #[
+//   #set heading(numbering: none)
+//   = CERTIFICATE OF COMPLETION
+// ]
+
 
 #v(0.3in)
 
 
 #par(justify: true)[
-  This is to certify that the project titled *"Sound for Silence"* has been successfully completed by *#name*, a student of Bachelor of Technology, 8th Semester, at *#college, Jaipur*.
+  This is to certify that the project titled *"Sound for Silence"* has been successfully completed by *#name1, #name2, #name3, and #name4*, a student of Bachelor of Technology, 8th Semester, at *#college, Jaipur*.
   The project work presented in this report is a *bonafide and satisfactory account* of the work carried out under my supervision, and is hereby *recommended for submission* as part of the fulfilment of the academic requirements for the 8th semester of the B.Tech program.
 ]
 
 #v(0.6in)
 
-#columns(2, gutter: 4pt)[
+#columns(2, gutter: 40pt)[
   #align(left)[
     #text(size: 12pt)[
       *Project In-charge*\
-  
+      #inch
     ]
   ]
   #colbreak()
-  #align(right)[
+  #align(left)[
     #text(size: 12pt)[
       *Submitted by*\
-      #name\
-      Roll No: #roll\
+    #name1 (#roll1)\
+    #name2 (#roll2)\
+    #name3 (#roll3)\
+    #name4 (#roll4)\
     ]
   ]
 ]
@@ -172,62 +223,98 @@ AP in CSE Deptt"
 // ════════════════════════════════════════════════════════════════
 //  DECLARATION
 // ════════════════════════════════════════════════════════════════
-#pagebreak()
+// #pagebreak()
+
+// #align(center)[
+//   #text(size: 16pt, weight: "bold")[DECLARATION BY THE CANDIDATE]
+// ]
+
 
 #align(center)[
-  #text(size: 16pt, weight: "bold")[DECLARATION BY THE CANDIDATE]
-]
+//   #text(size: 16pt, weight: "bold")[DECLARATION BY THE CANDIDATE]
+#[
+  #show heading: set text(size: 16pt, weight: "bold")   
+  #set heading(numbering: none)
+  
+      #heading(outlined: false)[DECLARATION BY THE CANDIDATE]
 
+]
+]
 #v(0.3in)
 
 #par(justify: true)[
-  I, *#name*, hereby declare that the project work titled *#project* is an original and authentic piece of work carried out by me at *#college, Jaipur* in partial fulfilment of the requirements for
+  We, *#name1, #name2, #name3, and #name4* hereby declare that the project work titled *#project* is an original and authentic piece of work carried out by us at *#college, Jaipur* in partial fulfilment of the requirements for
 the award of the degree of *Bachelor of Technology (B.Tech)*.
 \
-I further affirm that this work has not been submitted, either fully or partially,
+We further affirm that this work has not been submitted, either fully or partially,
 for the award of any other degree or diploma at any institution.
 ]
 
 #v(0.8in)
 
-#align(right)[
-  #text(size: 12pt)[
-    *#name*\
-    Roll No: #roll\
+
+#columns(2, gutter: 40pt)[
+  #align(left)[
+ 
+  ]
+  #colbreak()
+  #align(left)[
+    #text(size: 12pt)[
+   *#name1 (#roll1)*\
+      \
+    *#name2 (#roll2)*\
+    \
+    *#name3 (#roll3)*\
+\
+    *#name4 (#roll4)*\
+    ]
   ]
 ]
+
 
 // ════════════════════════════════════════════════════════════════
 //  ACKNOWLEDGEMENT
 // ════════════════════════════════════════════════════════════════
-#pagebreak()
+// #pagebreak()
 
+// #align(center)[
+//   #text(size: 16pt, weight: "bold")[ACKNOWLEDGEMENT]
+// ]
+// 
 #align(center)[
-  #text(size: 16pt, weight: "bold")[ACKNOWLEDGEMENT]
+//   #text(size: 16pt, weight: "bold")[DECLARATION BY THE CANDIDATE]
+#[
+  #show heading: set text(size: 16pt, weight: "bold")   
+  #set heading(numbering: none)
+  
+    #heading(outlined: false)[ACKNOWLEDGEMENT]
+
 ]
+]
+
 
 #v(0.3in)
 
 #par(justify: true)[
-  It gives me immense pleasure to express my heartfelt gratitude to all those
+  It gives us immense pleasure to express my heartfelt gratitude to all those
 who have supported and guided me throughout the successful completion of
 this final year project.
 \
-I would first like to extend my sincere thanks to Dr. *Arvind Agarwal*,
+We would first like to extend my sincere thanks to Dr. *Arvind Agarwal*,
 President, and *Dr. Puja Agarwal*, Group Director of Arya Institute of
 Engineering Technology and Management, Jaipur, for providing an excellent
 academic environment and all the necessary facilities that foster learning and
 innovation.
 \
-I would like to express my special thanks to *Er. Neelam Jangid*, Assistant
+We would like to express my special thanks to *Er. Neelam Jangid*, Assistant
 Professor, *Computer Science and Engineering*, for his visionary leadership,
 valuable suggestions, and motivation throughout the course of this project.
 \
-I am also thankful to my Project In-charge, * Er. Hemlata Garg*, whose timely
+We am also thankful to my project In-charge, * #inch*, whose timely
 feedback, guidance, and coordination played a vital role in ensuring the
 quality and completion of this project work.
 \
-Last but not least, I sincerely thank all the faculty members, lab assistants, and
+Last but not least, We sincerely thank all the faculty members, lab assistants, and
 my peers who contributed directly or indirectly with their support and
 inspiration during the entire project duration.
 This project has been a significant learning experience and a stepping stone in
@@ -236,57 +323,186 @@ my professional development.
 
 #v(0.6in)
 
-#align(right)[
-  #text(size: 12pt)[
-    *#name*\
-    Roll No: #roll\
-    B.Tech 8th Semester, CSE
+// #align(right)[
+//   #text(size: 12pt)[
+//     // *#name1*\
+//     *#name1 (#roll1)*\
+//     *#name2 (#roll2)*\
+//     *#name3 (#roll3)*\
+//     *#name4 (#roll4)*\
+
+//     // Roll No: #roll\
+//     B.Tech 8th Semester, CSE
+//   ]
+// ]
+#columns(2, gutter: 40pt)[
+  #align(left)[
+ 
+  ]
+  #colbreak()
+  #align(left)[
+    #text(size: 12pt)[
+    *#name1 (#roll1)*\
+    *#name2 (#roll2)*\
+    *#name3 (#roll3)*\
+    *#name4 (#roll4)*\
+
+    // Roll No: #roll\
+    *B.Tech 8th Semester, CSE*
+    ]
   ]
 ]
 
 // ════════════════════════════════════════════════════════════════
 //  LIST OF TABLES
 // ════════════════════════════════════════════════════════════════
-#pagebreak()
+// #pagebreak()
 
-#align(center)[
-  #text(size: 14pt, weight: "bold")[LIST OF TABLES]
-]
-
-#v(0.2in)
-
-#outline(target: figure.where(kind: table), title: none)
+// #align(center)[
+//   #text(size: 14pt, weight: "bold")[LIST OF TABLES]
+// ]
 
 
-// ════════════════════════════════════════════════════════════════
-//  LIST OF FIGURES
-// ════════════════════════════════════════════════════════════════
-#pagebreak()
-
-#align(center)[
-  #text(size: 14pt, weight: "bold")[LIST OF IMAGES]
-]
-#v(0.2in)
-
-#outline(target: figure.where(kind: image), title: none)
-
-
-\
 
 
 // ════════════════════════════════════════════════════════════════
 //  TABLE OF CONTENTS
 // ════════════════════════════════════════════════════════════════
-#pagebreak()
+
+
+// // Remove dots for level 1 entries
+// #show outline.entry.where(): set outline.entry(fill: [])
+// // Make level 1 entries bold
+// #show outline.entry.where(level: 1): set text(weight: "bold")
+
+// // #pagebreak()
+// #align(center)[
+// //   #text(size: 16pt, weight: "bold")[DECLARATION BY THE CANDIDATE]
+// #[
+//   #show heading: set text(size: 16pt, weight: "bold")   
+//   #set heading(numbering: none)
+//   = TABLE OF CONTENTS
+// ]]
+// #v(0.3in)
+// *PLEMARIES*
+// #v(10pt)
+// #outline(title: none, indent: 2em, depth: 2)
+// #v(10pt)
+// // #outline(title: none, indent: 2em, depth: 2)   
+
+
+#show outline.entry.where(): set outline.entry(fill: [])
+#show outline.entry.where(level: 1): set text(weight: "bold")
+
 #align(center)[
-  #text(size: 14pt, weight: "bold")[TABLE OF CONTENTS]
+  #show heading: set text(size: 16pt, weight: "bold")   
+  #set heading(numbering: none)
+  
+    #heading(outlined: false)[TABLE OF CONTENTS]
+
 ]
+#v(0.3in)
+
+*PRELIMINARIES*
+#v(6pt)
+#grid(
+  columns: (1fr, auto),
+  gutter: 4pt,
+  ..([• Certificate of Completion], align(right)[i]),
+  ..([• Declaration by the Candidate], align(right)[ii]),
+  ..([• Acknowledgement], align(right)[iii]),
+  ..([• Table of Contents], align(right)[iv]),
+  ..([• List of Figures], align(right)[vi]),
+  ..([• List of Tables], align(right)[vii]),
+)
+
 #v(10pt)
+
+// Main outline only (no header row, no line)
 #outline(title: none, indent: 2em, depth: 2)
+
+#align(center)[
+  #show heading: set text(size: 16pt, weight: "bold")   
+  #set heading(numbering: none)
+  #heading(outlined: false)[LIST OF TABLES]
+]
+
+#v(0.3in)
+
+#context {
+  let tables = query(figure.where(kind: table))
+  
+  table(
+    columns: (auto, 1fr, auto),
+    stroke: 0.5pt,
+    inset: 8pt,
+    align: (left, left, right),
+    // Header row
+    table.header(
+      [*Table No.*], [*Name of Table*], [*Page No.*],
+    ),
+    // Entries
+    ..tables.enumerate().map(((i, fig)) => {
+      let page = fig.location().page()
+      let caption = fig.caption.body
+      (
+        [*Table #(i + 1)*],
+        caption,
+        [#page],
+      )
+    }).flatten()
+  )
+}
+
+// ════════════════════════════════════════════════════════════════
+//  LIST OF FIGURES
+// ════════════════════════════════════════════════════════════════
+// #pagebreak()
+
+// #align(center)[
+//   #text(size: 14pt, weight: "bold")[LIST OF IMAGES]
+// ]
+
+
+#align(center)[
+  #show heading: set text(size: 16pt, weight: "bold")   
+  #set heading(numbering: none)
+  #heading(outlined: false)[LIST OF IMAGES]
+]
+
+#v(0.3in)
+
+#context {
+  let figures = query(figure.where(kind: image))
+  
+  table(
+    columns: (auto, 1fr, auto),
+    stroke: 0.5pt,
+    inset: 8pt,
+    align: (left, left, right),
+    table.header(
+      [*Figure No.*], [*Name of Figure*], [*Page No.*],
+    ),
+    ..figures.enumerate().map(((i, fig)) => {
+      let page = fig.location().page()
+      let caption = fig.caption.body
+      (
+        [*Figure #(i + 1)*],
+        caption,
+        [#page],
+      )
+    }).flatten()
+  )
+}
+
+
+\
 
 // ── Enable page numbering from Introduction ──
 #set page(numbering: "1")
 #counter(page).update(1)
+
+
 // ════════════════════════════════════════════════════════════════
 //  Enable arabic page numbering from here
 // ════════════════════════════════════════════════════════════════
@@ -301,11 +517,14 @@ my professional development.
 // ════════════════════════════════════════════════════════════════
 //  1. INTRODUCTION
 // ════════════════════════════════════════════════════════════════
+
+
+
+
 = Introduction
 
-== 1.1 Abstract of Project
+== Abstract of Project
 
-=== 1.1.1 Title of the Project
 
 *Sound for Silence* is a dual-interface digital healthcare platform designed for children undergoing cochlear implant rehabilitation. The system comprises an Android mobile application for patients and parents, and a web-based dashboard for therapists and clinicians, unified by a Firebase cloud backend.
 
@@ -331,7 +550,7 @@ table(
 
 )
 
-=== 1.1.2 Objective
+=== Objective
 
 The objectives of Sound for Silence as a system are:
 
@@ -348,7 +567,7 @@ The specific objectives of the Backend & Firebase Engineer role are:
 - To configure Firebase Hosting for the web dashboard with a clean deployment pipeline.
 - To ensure real-time synchronisation of data between the Android app and the web portal via Firestore listeners.
 
-== 1.2 Problem Specification / Need of Project
+== Problem Specification / Need of Project
 
 Children who receive cochlear implants require months to years of structured auditory and speech rehabilitation. The therapy protocol involves progressive stages of auditory training, regular quizzes to assess comprehension, and periodic clinical assessments using standardised scoring tools such as the CAP (Categories of Auditory Performance) and SIR (Speech Intelligibility Rating) scales.
 
@@ -363,7 +582,7 @@ Sound for Silence addresses all these requirements using Firebase as a serverles
 // ════════════════════════════════════════════════════════════════
 = Feasibility Study
 
-== 2.1 Technical Feasibility
+== Technical Feasibility
 
 The backend infrastructure of Sound for Silence is built entirely on Firebase, a managed Backend-as-a-Service (BaaS) platform provided by Google. Firebase eliminates the requirement for a dedicated application server, reducing operational complexity to zero while providing production-grade cloud infrastructure.
 
@@ -377,13 +596,13 @@ The backend infrastructure of Sound for Silence is built entirely on Firebase, a
 
 All of these services are well-documented, actively maintained by Google, and have been used in production healthcare and education applications. The technical complexity of the backend implementation is well within the scope of a final-year B.Tech project.
 
-== 2.2 Operational Feasibility
+== Operational Feasibility
 
 From an operational standpoint, the Firebase backend is transparent to end users. Parents using the Android app and therapists using the web dashboard interact with their respective interfaces without any awareness of the underlying backend. Data entered by the therapist appears in the parent's view within seconds via Firestore real-time listeners, without any manual refresh or polling.
 
 The serverless nature of Firebase means there are no servers to manage, update, or monitor. Firebase Console provides a visual interface for monitoring authentication events, database reads and writes, hosting deployments, and security rule evaluations. This makes the backend operationally manageable by non-DevOps personnel such as a college faculty member overseeing the project.
 
-== 2.3 Economic Feasibility
+== Economic Feasibility
 
 Firebase's Spark (free) plan covers all backend requirements for this project:
 
@@ -408,7 +627,7 @@ No dedicated server, VPS, or paid database subscription is required. The total m
 // ════════════════════════════════════════════════════════════════
 = Software Requirement Specifications
 
-== 3.1 Introduction
+== Introduction
 *Backend Software Requirements Overview:*  
 The backend is the authoritative integration layer connecting the Android app and web dashboard, responsible for data management, identity, access control, integrity, and coordinated state across clients.
 
@@ -429,9 +648,9 @@ Automated test suites validate Firestore security rules and CRUD scenarios; CI/C
 
 
 
-== 3.2 Selection of Technology / Specific Requirements
+== Selection of Technology / Specific Requirements
 
-=== 3.2.1 Functional Requirements
+=== Functional Requirements
 
 *Authentication:*
 - The system shall authenticate users via email and password using Firebase Authentication.
@@ -454,14 +673,14 @@ Automated test suites validate Firestore security rules and CRUD scenarios; CI/C
 - The web dashboard shall be deployed to Firebase Hosting and accessible via HTTPS.
 - The hosted dashboard shall load within 3 seconds on a standard broadband connection.
 
-=== 3.2.2 Non-Functional Requirements
+=== Non-Functional Requirements
 
 - *Security:* All data in transit is encrypted via HTTPS/TLS. Firestore data at rest is encrypted by Google. Passwords are never stored in plaintext — Firebase Authentication handles hashing internally.
 - *Scalability:* Firestore scales horizontally without configuration. The backend design shall not include any hard-coded limits that would prevent scaling to hundreds of patients.
 - *Reliability:* Firebase provides 99.95% uptime SLA. No custom reliability engineering is required.
 - *Maintainability:* The Firestore schema and Security Rules shall be documented clearly. All collection and field names shall follow a consistent camelCase naming convention.
 
-=== 3.2.3 Technology Stack
+=== Technology Stack
 
 #figure(table(  columns: (1fr, 1fr, 1.2fr),
   stroke: 0.5pt,
@@ -485,7 +704,7 @@ Automated test suites validate Firestore security rules and CRUD scenarios; CI/C
 // ════════════════════════════════════════════════════════════════
 = Design
 
-== 4.1 ER Diagram
+== ER Diagram
 
 The Entity-Relationship diagram models the logical data entities in Sound for Silence and their relationships, prior to mapping them to Firestore's document-collection structure.
 
@@ -518,7 +737,7 @@ The Entity-Relationship diagram models the logical data entities in Sound for Si
   ]
 ],caption: [ER Diagram ]
 )
-== 4.2 Data Flow Diagram (Level 0 & Level 1)
+== Data Flow Diagram (Level 0 & Level 1)
 
 === Level 0 — Context Diagram
 
@@ -572,7 +791,7 @@ align(center)[
 )
 
 
-== 4.3 Modules
+== Modules
 
 From the backend perspective, the system is organised into four modules:
 
@@ -592,7 +811,7 @@ This module is the backend's access control layer. Written in the Firestore Secu
 
 This module manages the deployment of the web dashboard to Firebase Hosting. The Firebase CLI (`firebase deploy`) uploads the static files (HTML, CSS, JS) to Firebase's CDN. A `firebase.json` configuration file defines the hosting root directory and URL rewrite rules.
 
-== 4.4 Database
+== Database
 
 The Firestore database is structured as a hierarchy of collections and documents. Below is the complete schema:
 
@@ -720,7 +939,7 @@ align(center)[
     ]
 ], caption: [Firestore Collection Hierarchy ] )
 
-== 4.5 Input–Output Form / Screen Layout
+== Input–Output Form / Screen Layout
 
 From the backend perspective, inputs and outputs are API calls (Firestore reads/writes and Auth requests) rather than visual screens. The relevant I/O interactions are:
 
@@ -761,7 +980,7 @@ From the backend perspective, inputs and outputs are API calls (Firestore reads/
 
 This chapter documents the complete backend implementation carried out as part of the Backend & Firebase Engineer role.
 
-== 5.1 Firebase Project Setup
+== Firebase Project Setup
 
 *Firebase Project & Services:*  
 A single Firebase project at console.firebase.google.com was used as the unified backend for both Android and web, with Authentication (email/password), Cloud Firestore (production mode), and Firebase Hosting enabled.
@@ -775,7 +994,7 @@ Web app registered in the same project; firebaseConfig object (API keys and proj
 *Benefits of the Unified Architecture:*  
 Centralized data management (single Firestore) for consistency; cross-platform consistency and shared authentication; simplified deployment via Firebase Hosting.
 
-== 5.2 Firebase Authentication Implementation
+== Firebase Authentication Implementation
 
 Firebase Authentication was configured with the *Email/Password* sign-in provider. Two user types — parents and therapists — are distinguished via *Custom Claims*, which are metadata fields attached to the Firebase Auth JWT token.
 
@@ -875,7 +1094,7 @@ auth.currentUser.getIdTokenResult().then((idTokenResult) => {
 });
 ```
 
-== 5.3 Cloud Firestore — Data Seeding
+== Cloud Firestore — Data Seeding
 
 Initial stage and video data was seeded into Firestore using the Firebase Admin SDK. A `seed.js` script was written to create the `stages` collection and their `videos` subcollections with the correct structure:
 
@@ -913,7 +1132,7 @@ async function seedStages() {
 seedStages();
 ```
 
-== 5.4 Firestore Security Rules Implementation
+== Firestore Security Rules Implementation
 
 The Security Rules are the core of the backend access control system. They are written in the Firestore Rules language and deployed via the Firebase CLI. The complete implemented rules are as follows:
 
@@ -992,7 +1211,7 @@ The rules enforce the following access matrix:
 ),  caption: [Firestore Security Rules Access Matrix by Role],
 )
 
-== 5.5 Firebase Hosting — Deployment
+== Firebase Hosting — Deployment
 
 The web dashboard was deployed to Firebase Hosting using the Firebase CLI. The `firebase.json` configuration file defines the hosting settings:
 
@@ -1025,7 +1244,7 @@ firebase deploy --only hosting
 
 After deployment, the dashboard was accessible at the Firebase-assigned domain (`sound-for-silence.web.app`) over HTTPS, with automatic SSL certificate provisioning by Firebase.
 
-== 5.6 Real-Time Synchronisation Implementation
+== Real-Time Synchronisation Implementation
 
 Firestore real-time listeners were implemented on both clients to push data updates without polling. On the web dashboard, the therapist's patient list updates in real time:
 
@@ -1268,7 +1487,7 @@ patientRef.addSnapshotListener { snapshot, error ->
 
 Backend testing was conducted across three areas: Authentication, Firestore CRUD operations, and Security Rules validation.
 
-== 6.1 Authentication Testing
+== Authentication Testing
 
 #figure(table(  columns: (3em, 1.5fr, 2fr, 3fr, 1fr),
   stroke: 0.5pt,
@@ -1284,7 +1503,7 @@ Backend testing was conducted across three areas: Authentication, Firestore CRUD
   [TC06], [Custom claim present], [Login as therapist, fetch ID token], [Token contains `role: "therapist"` in claims], [Pass],
 ),   caption: [Authentication Test Cases and Results])
 
-== 6.2 Firestore CRUD Testing
+== Firestore CRUD Testing
 
 #figure(table(  columns: (3em, 2fr, 2fr, 2fr, 1fr),
   stroke: 0.5pt,
@@ -1300,7 +1519,7 @@ Backend testing was conducted across three areas: Authentication, Firestore CRUD
 ) , caption: [Firestore Operations Test Cases and Results],
 )
 
-== 6.3 Security Rules Testing
+== Security Rules Testing
 
 #figure(table(  columns: (3em, 2fr, 2fr, 2fr, 1fr),
   stroke: 0.5pt,
@@ -1390,7 +1609,7 @@ There is no automated testing framework for the backend services. This makes it 
 // ════════════════════════════════════════════════════════════════
 = Conclusion & Future Scope
 
-== 7.1 Conclusion
+== Conclusion
 
 The backend infrastructure of Sound for Silence was successfully designed and implemented using Firebase’s serverless cloud platform, chosen for its ability to handle real-time data synchronization, eliminate the need for managing dedicated servers, and provide built-in scalability and security. This implementation met all specified backend objectives: secure email/password authentication with role-based custom claims that distinguish between patients, therapists, and administrators; a well-structured Firestore data model that maps all application entities including user profiles, therapy sessions, exercise logs, progress metrics, and therapist assignments; comprehensive Security Rules that enforce fine-grained, role-based access control at the database layer; real-time data synchronization between the Android mobile app and the web-based therapist dashboard; and automated deployment of the therapist portal via Firebase Hosting with global CDN support and HTTPS enforcement.
 
@@ -1398,7 +1617,7 @@ A key technical contribution of this role was the design and validation of the F
 
 Choosing Firebase as a Backend-as-a-Service (BaaS) eliminated the need for provisioning, maintaining, or scaling backend servers, reducing infrastructure costs to effectively zero while still delivering production-grade reliability, automatic scaling under load, and enterprise-level security features like automatic TLS, DDoS protection, and audit logging. This architectural decision makes Sound for Silence immediately deployable in real-world clinical settings—such as cochlear implant rehabilitation centers—without requiring IT staff, server maintenance, or complex DevOps pipelines. From a personal development perspective, this project provided hands-on experience with NoSQL data modeling for complex relational domains, serverless architecture design patterns, declarative security rule writing, JWT token-based authentication flows, and real-time database synchronization—all directly transferable skills for industry backend engineering roles focused on scalable, secure, and maintainable systems.
 
-== 7.2 Future Scope
+== Future Scope
 
 *1. Cloud Functions for server-side logic:* Firebase Cloud Functions (Node.js) would be used to implement server-side triggers — for example, automatically unlocking the next video stage after a quiz is passed, or sending FCM push notifications to the parent when a therapist records a new assessment.
 
@@ -1435,7 +1654,7 @@ Choosing Firebase as a Backend-as-a-Service (BaaS) eliminated the need for provi
 // ════════════════════════════════════════════════════════════════
 = Bibliography
 
-#set heading(numbering: none)
+// #set heading(numbering: none)
 
 #v(6pt)
 
